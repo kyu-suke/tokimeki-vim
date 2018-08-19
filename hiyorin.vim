@@ -1,18 +1,18 @@
 runtime! members/*.vim
 
-command! Tokimeki call Piyo()
+command! Hiyorin call Piyo()
 function! Piyo()
 	let s:winid = win_getid()
-	silent! execute 'new' 'tokimeki'
+	silent! execute 'new' 'hiyorin'
 	setlocal nonumber
 	setlocal buftype=nowrite
-	call s:highlightPiyo()
+	call s:highlightHiyori()
 	:0,$ delete
 	call append('.', s:piyo[0])
 	call win_gotoid(s:winid)
 endfunction
 
-function! s:highlightPiyo()
+function! s:highlightHiyori()
 
 	syntax clear
 	syntax match tokimeki_comvo_char1 /b/ containedin=tokimeki_comvo
@@ -51,6 +51,7 @@ endfunction
 let s:piyo = [
 \		[
 \"",
+\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
 \"bbb@@@@@@@@bb@@@@@@@@@@@@@@@@@@@@@@@@@@bbbbbb",
 \"bbb@@gggg@@@@@@llllllllllllll@@@@llgg@@bbbbbb",
 \"bbb@@ggggggllllmmmmmmmmmmmmmmllllgggg@@bbbbbb",
